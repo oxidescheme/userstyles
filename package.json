@@ -1,0 +1,23 @@
+{
+  "name": "@oxidescheme/userstyles",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Oxide dark theme userstyles for the web",
+  "type": "module",
+  "scripts": {
+    "build": "bun run scripts/stylus-import.ts",
+    "lint": "bun run scripts/lint.ts"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oxidescheme/userstyles"
+  },
+  "devDependencies": {
+    "@oxidescheme/palette": "file:../palette",
+    "@types/bun": "latest",
+    "less": "^4.2.0",
+    "stylelint": "^16.0.0",
+    "usercss-meta": "^0.12.0"
+  }
+}

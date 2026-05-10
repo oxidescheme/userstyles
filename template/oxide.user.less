@@ -1,0 +1,22 @@
+/* ==UserStyle==
+@name <SITE> Oxide
+@namespace github.com/oxidescheme/userstyles/styles/<slug>
+@homepageURL https://github.com/oxidescheme/userstyles/tree/main/styles/<slug>
+@version 2000.01.01
+@updateURL https://github.com/oxidescheme/userstyles/raw/main/styles/<slug>/oxide.user.less
+@supportURL https://github.com/oxidescheme/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3A<slug>
+@description Oxide dark theme for <SITE>
+@author Oxide
+@license MIT
+@preprocessor less
+@var select accentColor "Accent" ["teal:Teal*", "red:Red", "orange:Orange", "yellow:Yellow", "green:Green", "sky:Sky", "blue:Blue", "purple:Purple", "pink:Pink"]
+==/UserStyle== */
+
+@import "https://raw.githubusercontent.com/oxidescheme/userstyles/main/lib/lib.less";
+
+@-moz-document domain("<domain>") {
+    #lib.palette();
+    #lib.defaults();
+
+    /* Start styling below */
+}

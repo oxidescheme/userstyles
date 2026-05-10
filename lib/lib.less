@@ -1,0 +1,129 @@
+// Oxide Color Palette — Dark Only
+// Source: github.com/oxidescheme/palette
+
+@oxide: {
+  // Surface
+  @mantle:    #121212;
+  @base:      #161616;
+  @surface0:  #222222;
+  @surface1:  #262626;
+  // Text
+  @bright_text: #dedede;
+  @text:        #cecece;
+  @subtext0:    #bebebe;
+  @subtext1:    #8f8f8f;
+  @subtext2:    #555555;
+  // Accents
+  @red:           #ed756e;
+  @orange:        #e48233;
+  @yellow:        #c39900;
+  @green:         #5bb661;
+  @teal:          #00baaa;
+  @sky:           #00b3d6;
+  @blue:          #3ba6f5;
+  @purple:        #968ff7;
+  @pink:          #cc7bd1;
+  // Bright accents
+  @bright_red:    #ff9890;
+  @bright_orange: #ffa156;
+  @bright_yellow: #e3b831;
+  @bright_green:  #7bd77f;
+  @bright_teal:   #00dcca;
+  @bright_sky:    #00d5f9;
+  @bright_blue:    #6fc6ff;
+  @bright_purple:  #b5b2ff;
+  @bright_pink:    #dd8be2;
+  // Diff
+  @amber: #452b28;
+  @jade:  #263826;
+  @ice:   #213546;
+};
+
+#lib {
+  .palette() {
+    // Surface
+    @mantle:      #121212;
+    @base:        #161616;
+    @surface0:    #222222;
+    @surface1:    #262626;
+    // Text
+    @bright_text: #dedede;
+    @text:        #cecece;
+    @subtext0:    #bebebe;
+    @subtext1:    #8f8f8f;
+    @subtext2:    #555555;
+    // Accents
+    @red:           #ed756e;
+    @orange:        #e48233;
+    @yellow:        #c39900;
+    @green:         #5bb661;
+    @teal:          #00baaa;
+    @sky:           #00b3d6;
+    @blue:          #3ba6f5;
+    @purple:        #968ff7;
+    @pink:          #cc7bd1;
+    // Bright accents
+    @bright_red:    #ff9890;
+    @bright_orange: #ffa156;
+    @bright_yellow: #e3b831;
+    @bright_green:  #7bd77f;
+    @bright_teal:   #00dcca;
+    @bright_sky:    #00d5f9;
+    @bright_blue:    #6fc6ff;
+    @bright_purple:  #b5b2ff;
+    @bright_pink:    #dd8be2;
+    // Diff
+    @amber: #452b28;
+    @jade:  #263826;
+    @ice:   #213546;
+    // Accent resolver (set by @accentColor user variable)
+    @accent: @oxide[@@accentColor];
+  }
+
+  .defaults() {
+    color-scheme: dark;
+    ::selection {
+      background-color: fade(@accent, 30%);
+    }
+    input,
+    textarea {
+      &::placeholder {
+        color: @subtext0 !important;
+      }
+    }
+  }
+
+  .css-variables() {
+    --oxide-mantle: #121212;
+    --oxide-base: #161616;
+    --oxide-surface0: #222222;
+    --oxide-surface1: #262626;
+    --oxide-bright-text: #dedede;
+    --oxide-text: #cecece;
+    --oxide-subtext0: #bebebe;
+    --oxide-subtext1: #8f8f8f;
+    --oxide-subtext2: #555555;
+    --oxide-red: #ed756e;
+    --oxide-orange: #e48233;
+    --oxide-yellow: #c39900;
+    --oxide-green: #5bb661;
+    --oxide-teal: #00baaa;
+    --oxide-sky: #00b3d6;
+    --oxide-blue: #3ba6f5;
+    --oxide-purple: #968ff7;
+    --oxide-pink: #cc7bd1;
+    --oxide-bright-red: #ff9890;
+    --oxide-bright-orange: #ffa156;
+    --oxide-bright-yellow: #e3b831;
+    --oxide-bright-green: #7bd77f;
+    --oxide-bright-teal: #00dcca;
+    --oxide-bright-sky: #00d5f9;
+    --oxide-bright-blue: #6fc6ff;
+    --oxide-bright-purple: #b5b2ff;
+    --oxide-bright-pink: #dd8be2;
+    --oxide-amber: #452b28;
+    --oxide-jade: #263826;
+    --oxide-ice: #213546;
+    --oxide-accent: @accent;
+  }
+}
