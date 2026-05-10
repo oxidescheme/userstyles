@@ -1,0 +1,151 @@
+/* ==UserStyle==
+@name Reddit Oxide
+@namespace github.com/oxidescheme/userstyles/styles/reddit
+@homepageURL https://github.com/oxidescheme/userstyles/tree/main/styles/reddit
+@version 2026.05.10
+@updateURL https://github.com/oxidescheme/userstyles/raw/main/styles/reddit/oxide.user.less
+@supportURL https://github.com/oxidescheme/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Areddit
+@description Oxide dark theme for Reddit
+@author Oxide
+@license MIT
+
+@preprocessor less
+==/UserStyle== */
+
+@import "https://raw.githubusercontent.com/oxidescheme/userstyles/main/lib/lib.less";
+
+@-moz-document domain("reddit.com") {
+  :root:not(.theme-light) .theme-rpl,
+  :root:not(.theme-light).theme-rpl,
+  :root:not(.theme-light) .theme-beta,
+  :root:not(.theme-light).theme-beta,
+  .theme-dark {
+    #oxide();
+  }
+
+  #oxide() {
+    #lib.palette();
+    #lib.defaults();
+
+    --color-pizzaRed: @red !important;
+    --color-global-brand-orangered: @accent !important;
+    --color-global-focus: @surface1 !important;
+    --color-interactive-content-disabled: @subtext0 !important;
+    --color-interactive-background-disabled: fade(@subtext2, 70%) !important;
+    --color-interactive-pressed: @subtext2 !important;
+    --color-neutral-content: @text !important;
+    --color-neutral-content-disabled: @subtext0 !important;
+    --color-neutral-content-weak: @subtext0 !important;
+    --color-neutral-content-strong: @text !important;
+    --color-global-white: @mantle !important;
+    --color-neutral-background: @base !important;
+    --color-neutral-background-selected: @surface0 !important;
+    --color-neutral-background-weak: @mantle !important;
+    --color-neutral-background-medium: @base !important;
+    --color-neutral-background-strong: @mantle !important;
+    --color-neutral-background-hover: @surface0 !important;
+    --color-neutral-border: @surface0 !important;
+    --color-neutral-border-medium: @surface0 !important;
+    --color-neutral-border-weak: @surface0 !important;
+    --color-neutral-border-strong: @subtext2 !important;
+    --color-primary: @accent !important;
+    --color-primary-hover: lighten(@accent, 10%) !important;
+    --color-primary-visited: @purple !important;
+    --color-primary-background: @accent !important;
+    --color-primary-background-hover: darken(@accent, 5%) !important;
+    --color-primary-background-selected: darken(@accent, 5%) !important;
+    --color-primary-onBackground: @base !important;
+    --color-primary-onBackground-selected: @mantle !important;
+    --color-secondary: @subtext0 !important;
+    --color-secondary-hover: @subtext1 !important;
+    --color-secondary-weak: @subtext0 !important;
+    --color-secondary-onBackground: @text !important;
+    --color-secondary-background: @mantle !important;
+    --color-secondary-background-hover: @surface1 !important;
+    --color-secondary-background-selected: @surface1 !important;
+    --color-secondary-plain: @subtext0 !important;
+    --color-secondary-plain-hover: @subtext1 !important;
+    --color-danger-background: @red !important;
+    --color-danger-background-disabled: fade(@red, 20%) !important;
+    --color-danger-background-hover: fade(@red, 98%) !important;
+    --color-danger-onBackground: @text !important;
+    --color-danger-content: @red !important;
+    --color-danger-content-default: @mantle;
+    --color-danger-content-hover: darken(@red, 2%) !important;
+    --color-success-content: @green !important;
+    --color-success-hover: darken(@green, 2%) !important;
+    --color-success-onBackground: @mantle;
+    --color-success-background: @green !important;
+    --color-success-background-hover: darken(@green, 2%) !important;
+    --color-warning-content: @yellow !important;
+    --color-warning-content-hover: darken(@yellow, 2%) !important;
+    --color-warning-onBackground: @base !important;
+    --color-warning-background: @yellow !important;
+    --color-warning-background-hover: darken(@yellow, 2%) !important;
+    --color-upvote-content: @accent !important;
+    --color-upvote-disabled: @subtext0 !important;
+    --color-upvote-onBackground: @text !important;
+    --color-upvote-background: @base !important;
+    --color-upvote-background-hover: darken(@accent, 5%) !important;
+    --color-upvote-background-disabled: @base !important;
+    --color-downvote-content: @text !important;
+    --color-downvote-content-weak: @text !important;
+    --color-downvote-disabled: @subtext0 !important;
+    --color-downvote-onBackground: @text !important;
+    --color-downvote-background: @base !important;
+    --color-downvote-background-hover: darken(@blue, 5%) !important;
+    --color-downvote-background-disabled: @mantle !important;
+    --color-tone-1: @text !important;
+    --color-tone-2: @subtext0 !important;
+    --color-tone-3: @subtext1 !important;
+    --color-tone-4: @surface0 !important;
+    --color-tone-5: @surface1 !important;
+    --color-tone-6: @subtext2 !important;
+    --color-tone-7: @base !important;
+    --color-avatar-gradient: @accent !important;
+    --color-transparent-background-hover: fade(@surface0, 30%) !important;
+    --color-opacity-50: fade(@base, 50%) !important;
+    --color-online: @accent !important;
+    --color-favorite: @accent !important;
+    --color-brand-background: @accent !important;
+    --color-brand-background-hover: darken(@accent, 5%) !important;
+    --color-brand-onBackground: @mantle !important;
+    --color-global-orangered: @accent !important;
+    --color-action-upvote: @accent !important;
+    --color-action-downvote: @blue;
+    --color-banner-error-text: @base !important;
+
+    --shreddit-color-wordmark: @text;
+
+    reddit-search-large {
+      .search-input {
+        border-color: @surface0 !important;
+
+        &:focus-within {
+          border-color: @subtext0 !important;
+        }
+      }
+    }
+
+    reddit-header-large reddit-search-large::before,
+    reddit-header-large reddit-search-large::after {
+      background:
+        linear-gradient(@base, @base) padding-box,
+        linear-gradient(90deg, @surface0, @surface0) border-box;
+    }
+
+    #pdp-credit-bar {
+      --color-neutral-background: @base;
+      --color-neutral-content: @text;
+      --color-neutral-content-weak: @subtext0;
+      --color-primary-hover: lighten(@accent, 10%);
+    }
+
+    reddit-header-large reddit-search-large::before,
+    reddit-header-large reddit-search-large::after {
+      background:
+        linear-gradient(@base, @base) padding-box,
+        linear-gradient(90deg, @accent, @accent) border-box;
+    }
+  }
+}
