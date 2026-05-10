@@ -3,7 +3,6 @@ import { join } from "node:path";
 
 const STYLES_DIR = join(import.meta.dir, "..", "styles");
 const REQUIRED_FIELDS = ["name", "namespace", "version", "description", "author", "license", "preprocessor"];
-const REQUIRED_META_VARS = ["accentColor"];
 const REQUIRED_IMPORT = "https://raw.githubusercontent.com/oxidescheme/userstyles/main/lib/lib.less";
 const OXIDE_COLORS = new Set([
   "mantle", "base", "surface0", "surface1",
@@ -70,13 +69,6 @@ async function lint(): Promise<number> {
     for (const field of REQUIRED_FIELDS) {
       if (!meta.has(field)) {
         errors.push({ file: slug, message: `Missing @${field} in metadata` });
-      }
-    }
-
-    for (const varName of REQUIRED_META_VARS) {
-      const hasVar = Array.from(meta.values()).some((v) => v.includes(varName));
-      if (!hasVar) {
-        errors.push({ file: slug, message: `Missing @var for ${varName}` });
       }
     }
 

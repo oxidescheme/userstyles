@@ -1,0 +1,463 @@
+/* ==UserStyle==
+@name Google Search Oxide
+@namespace github.com/oxidescheme/userstyles/styles/google
+@homepageURL https://github.com/oxidescheme/userstyles/tree/main/styles/google
+@version 2025.05.10
+@updateURL https://github.com/oxidescheme/userstyles/raw/main/styles/google/oxide.user.less
+@supportURL https://github.com/oxidescheme/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Agoogle
+@description Oxide dark theme for Google Search
+@author Oxide
+@license MIT
+@preprocessor less
+==/UserStyle== */
+
+@import "https://raw.githubusercontent.com/oxidescheme/userstyles/main/lib/lib.less";
+
+@-moz-document regexp("^https?://(www\\.|images\\.)?google\\..*") {
+    #lib.palette();
+    #lib.defaults();
+
+    // --- CSS custom property overrides (most maintainable approach) ---
+    :root,
+    body {
+        --xhUGwc: @base;
+        --bbQxAb: @text;
+        --IXoxUe: @subtext0;
+        --COEmY: @text;
+        --YLNNHc: @text;
+        --JKqx2: @accent;
+        --gS5jXb: @surface0;
+        --mXZkqc: @surface0;
+        --EpFNW: @mantle;
+        --XKMDxc: @mantle;
+        --TSWZIb: @mantle;
+        --gm3-sys-color-primary: @surface0;
+        --gm3-sys-color-on-primary: @accent;
+    }
+
+    // --- Page background ---
+    #gsr,
+    body {
+        background-color: @base !important;
+    }
+
+    .sfbg {
+        background-color: @base;
+    }
+
+    // --- Header / top bar ---
+    .CvDJxb {
+        background-color: @base !important;
+    }
+
+    #gb {
+        background-color: @base !important;
+    }
+
+    .gb_Ka.gb_f,
+    .gb_Na.gb_f {
+        background-color: @base !important;
+    }
+
+    .uU7dJb {
+        border-bottom-color: @surface0;
+        background-color: @mantle;
+        color: @subtext1;
+    }
+
+    .KxwPGc {
+        background-color: @mantle;
+    }
+
+    // --- Search bar ---
+    .RNNXgb {
+        background: @surface0;
+        border-color: @surface1;
+    }
+
+    .RNNXgb:hover,
+    .sbfc .RNNXgb {
+        background: @surface0 !important;
+        border-color: @surface0;
+        box-shadow: 0 1px 6px 0 @mantle;
+    }
+
+    .minidiv .RNNXgb {
+        background: @surface0;
+        border-color: @surface1;
+    }
+
+    .emcav .RNNXgb {
+        box-shadow: 0 1px 6px 0 @mantle;
+        background: @surface0;
+        border-color: @surface0;
+    }
+
+    .gLFyf {
+        color: @text;
+    }
+
+    .QCzoEc {
+        color: @subtext2;
+    }
+
+    // --- Search suggestions dropdown ---
+    .aajZCb {
+        background: @surface0;
+        box-shadow: 0 4px 6px 0 @mantle;
+    }
+
+    .K4VNlb,
+    .Sl6fgd.A7Yvie,
+    .Sl6fgd .zGVn2e,
+    .UUbT9 {
+        background-color: @surface0;
+        border-color: @surface0 !important;
+    }
+
+    .sbct:hover {
+        background-color: @surface1;
+    }
+
+    .wM6W7d,
+    .ABAbCc {
+        color: @text;
+    }
+
+    .JCHpcb {
+        color: @subtext0;
+    }
+
+    .JCHpcb:hover {
+        color: @accent;
+    }
+
+    .xtSCL {
+        border-top-color: @surface1;
+    }
+
+    // --- Search results ---
+    .rsGxI.Ww4FFb,
+    .Ww4FFb {
+        background-color: @base;
+    }
+
+    .g {
+        color: @text;
+    }
+
+    // Result title links
+    a {
+        color: @accent;
+    }
+
+    a:visited {
+        color: @purple;
+    }
+
+    // Result URL / cite
+    cite,
+    cite a:link,
+    cite a:visited {
+        color: @subtext0;
+    }
+
+    // Result snippet text
+    .cUnQKe .ILfuVd,
+    .cUnQKe .UiGGAb.ILfuVd {
+        color: @subtext1;
+    }
+
+    .cUnQKe .ILfuVd b,
+    .cUnQKe .QBI8hf b {
+        background-color: fade(@accent, 25%);
+        color: @text;
+    }
+
+    .VuuXrf {
+        color: @text;
+    }
+
+    // --- Sidebar / knowledge panel ---
+    .H73aad {
+        background-color: @mantle !important;
+        border-color: @surface0 !important;
+    }
+
+    .ipwqjc,
+    .xt8Uw {
+        color: @text;
+    }
+
+    .AQtWSd,
+    .ulmfef {
+        color: @accent;
+    }
+
+    .kno-ftr.rpBMYb {
+        color: @subtext0;
+    }
+
+    // --- "People also ask" ---
+    .vIifob,
+    .p8Jhnd {
+        background-color: @surface0 !important;
+    }
+
+    .vBnbff,
+    .RSWv0c.NaC7Cf {
+        background-color: @surface0 !important;
+        color: @text !important;
+    }
+
+    .related-question-pair .d0fCJc {
+        color: @text;
+    }
+
+    // --- Tabs (All, Images, News, etc.) ---
+    .hdtb-mitem a {
+        color: @subtext0;
+    }
+
+    .hdtb-mitem:hover a,
+    .hdtb-mitem.hdtb-msel {
+        color: @accent;
+    }
+
+    .hdtb-tl-sel {
+        border-color: @surface1;
+        background: @surface0;
+        color: @text;
+    }
+
+    .t2vtad:not(.hdtb-tl-sel):hover {
+        background-color: @surface0;
+        border-color: @surface1;
+        color: @text;
+    }
+
+    // --- Buttons ---
+    .gbqfba,
+    .lJ9FBc input[type="submit"] {
+        color: @text;
+        background-color: @surface0;
+        border-color: @surface1;
+    }
+
+    .gbqfba:hover,
+    .lJ9FBc input[type="submit"]:hover {
+        color: @text;
+        background-color: @surface0;
+        border-color: @subtext2;
+    }
+
+    .LiOdre {
+        background-color: @base;
+        border-color: @surface1;
+        color: @text;
+    }
+
+    .LiOdre:hover {
+        background-color: @mantle;
+        border-color: @subtext2;
+    }
+
+    .LiOdre:focus {
+        border-color: @accent;
+    }
+
+    .NZmxZe {
+        background-color: @base;
+        border-color: @surface1;
+        color: @text;
+    }
+
+    .NZmxZe:not(.rQEFy):hover {
+        background-color: @surface0;
+        border-color: @surface1;
+    }
+
+    // --- Footer ---
+    .f,
+    .j04ED,
+    .j04ED a {
+        color: @subtext0 !important;
+    }
+
+    .KxwPGc {
+        background-color: @mantle;
+    }
+
+    // --- Borders & dividers ---
+    .Faw6Fe,
+    .GpOXq {
+        border-color: @surface0 !important;
+    }
+
+    .Dgr5Hb,
+    .GqbEwc {
+        border-color: @surface0 !important;
+    }
+
+    .iRPzcb {
+        border-bottom-color: @surface1;
+    }
+
+    .GLcBOb {
+        border-bottom-color: @surface1;
+    }
+
+    // --- Scrollbar area bg ---
+    .Lj9fsd {
+        background-color: @base;
+    }
+
+    // --- Google logo recolor ---
+    .jfN4p {
+        @svg: escape(
+            '<svg xmlns="http://www.w3.org/2000/svg" width="272" height="92"><path fill="@{red}" d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18m-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44"/><path fill="@{yellow}" d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18m-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44"/><path fill="@{accent}" d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36"/><path fill="@{green}" d="M225 3v65h-9.5V3z"/><path fill="@{red}" d="m262.02 54.48 7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14m-23.27-7.98 19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93"/><path fill="@{accent}" d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91S16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03s10.84 25.03 24.7 25.03c8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65z"/></svg>'
+        );
+        content: url("data:image/svg+xml,@{svg}");
+    }
+
+    // --- Search icon ---
+    .aXBZVd {
+        @svg: escape(
+            '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="@{subtext0}" d="m20.49 19-5.73-5.73C15.53 12.2 16 10.91 16 9.5A6.5 6.5 0 1 0 9.5 16c1.41 0 2.7-.47 3.77-1.24L19 20.49zM5 9.5C5 7.01 7.01 5 9.5 5S14 7.01 14 9.5 11.99 14 9.5 14 5 11.99 5 9.5"/></svg>'
+        );
+        background-image: url("data:image/svg+xml,@{svg}");
+    }
+
+    // --- Secondary text ---
+    .wHYlTd,
+    .F0gfrd,
+    .EZAeBe {
+        color: @subtext0;
+    }
+
+    .IsZvec {
+        color: @subtext0;
+    }
+
+    .dyjrff {
+        color: @subtext1;
+    }
+
+    // --- Featured snippet highlight ---
+    @media (prefers-reduced-motion: no-preference) {
+        .c2xzTb .ILfuVd b {
+            background: linear-gradient(
+                90deg,
+                fade(@accent, 30%) 50%,
+                #0000 50%
+            ) no-repeat 75% 0;
+            background-size: 200% 100%;
+        }
+    }
+
+    // --- "People also search for" pills ---
+    .ZFiwCf {
+        background-color: @surface0;
+    }
+
+    .ZFiwCf:hover {
+        background-color: @surface1;
+    }
+
+    // --- Card/result containers ---
+    .dG2XIf {
+        background: @base;
+        border-color: @surface0 !important;
+    }
+
+    // --- AI Overview ---
+    .UxeQfc,
+    .s7d4ef,
+    .yXu61c,
+    .X6JNf,
+    .BERAof,
+    .oxbMzd,
+    .A5s9h,
+    .V9Wb7c,
+    .GVUPk,
+    .GyAeWb,
+    .A0hi5,
+    .Tme6jf {
+        background-color: @base !important;
+    }
+
+    .Fzsovc,
+    .cwYVJe,
+    .RJPOee,
+    .vM0jzc,
+    .clOx1e,
+    .Yt787,
+    .mulB1,
+    .xUc8Ie,
+    .sfgTZc,
+    .I6Kpxd,
+    .cQEt3 {
+        color: @text !important;
+    }
+
+    .yQLaje,
+    .tVoQIb,
+    .f9nOyf,
+    .kHtcsd,
+    .DopHqc,
+    .p7bv,
+    .ar9V1,
+    .DfMusf,
+    .y6CIle,
+    .JukT7c {
+        background-color: @surface0 !important;
+    }
+
+    .NOo3C {
+        color: @subtext1;
+    }
+
+    .xUc8Ie.BXdrne,
+    .YUg0se,
+    .WGbsof {
+        border-color: @surface1 !important;
+    }
+
+    // --- Misc overrides ---
+    .VfPpkd-StrnGf-rymPhb-f7MjDc,
+    .VfPpkd-qPzbhe-JNdkSc-Bz112c {
+        color: @accent !important;
+    }
+
+    .appbar {
+        background: @base;
+        border-top-color: @surface1;
+    }
+
+    .SRfaKe,
+    .SRfaKe h2 {
+        background-color: @mantle;
+    }
+
+    // --- Google-colored elements (map to oxide palette) ---
+    [fill="#4285f4"] {
+        fill: @accent;
+    }
+
+    [fill="#34a853"] {
+        fill: @green;
+    }
+
+    [fill="#ea4335"] {
+        fill: @red;
+    }
+
+    [fill="#fbbc05"] {
+        fill: @yellow;
+    }
+
+    // Selection
+    ::selection {
+        background-color: fade(@accent, 30%);
+    }
+}
