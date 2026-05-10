@@ -1,0 +1,253 @@
+/* ==UserStyle==
+@name Hacker News Oxide
+@namespace github.com/oxidescheme/userstyles/styles/hackernews
+@homepageURL https://github.com/oxidescheme/userstyles/tree/main/styles/hackernews
+@version 2025.05.10
+@updateURL https://github.com/oxidescheme/userstyles/raw/main/styles/hackernews/oxide.user.less
+@supportURL https://github.com/oxidescheme/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Ahackernews
+@description Oxide dark theme for Hacker News
+@author Oxide
+@license MIT
+@preprocessor less
+==/UserStyle== */
+
+@import "https://raw.githubusercontent.com/oxidescheme/userstyles/main/lib/lib.less";
+
+@-moz-document domain("news.ycombinator.com") {
+    #lib.palette();
+    #lib.defaults();
+
+    body {
+        background-color: @mantle;
+    }
+
+    // --- Main container ---
+    #hnmain {
+        background-color: @base;
+    }
+
+    // --- Header bar (orange bar) ---
+    td[bgcolor="#ff6600"] {
+        background-color: @surface1 !important;
+    }
+
+    .pagetop {
+        color: @text;
+    }
+
+    .pagetop a:link,
+    .pagetop a:visited {
+        color: @text;
+    }
+
+    .pagetop a:hover {
+        color: @accent;
+    }
+
+    .topsel a:link,
+    .topsel a:visited {
+        color: @bright_text !important;
+    }
+
+    .hnname a {
+        color: @accent !important;
+    }
+
+    // --- Story rows ---
+    .title {
+        color: @subtext1;
+    }
+
+    .title a:link {
+        color: @text;
+    }
+
+    .title a:visited {
+        color: @subtext1;
+    }
+
+    .title a:hover {
+        color: @accent;
+    }
+
+    .sitebit.comhead {
+        color: @subtext1;
+    }
+
+    .sitestr {
+        color: @accent;
+    }
+
+    // --- Subtext (points, author, time, comments) ---
+    .subtext {
+        color: @subtext1;
+    }
+
+    .subtext a:link,
+    .subtext a:visited {
+        color: @subtext0;
+    }
+
+    .subtext a:hover {
+        color: @accent;
+    }
+
+    .score {
+        color: @subtext0;
+    }
+
+    .hnuser {
+        color: @accent;
+    }
+
+    .hnuser:visited {
+        color: @purple;
+    }
+
+    .age a {
+        color: @subtext0;
+    }
+
+    // --- Vote arrows ---
+    .votearrow {
+        filter: invert(1) brightness(0.7);
+    }
+
+    .votearrow.rotate180 {
+        filter: invert(1) brightness(0.4);
+    }
+
+    // --- Comment pages ---
+    .comment {
+        color: @text;
+    }
+
+    .comment a:link {
+        color: @accent;
+    }
+
+    .comment a:visited {
+        color: @purple;
+    }
+
+    .comhead {
+        color: @subtext1;
+    }
+
+    .comhead a:link {
+        color: @subtext0;
+    }
+
+    .comhead a:visited {
+        color: @subtext1;
+    }
+
+    // Comment age colors (map to oxide text hierarchy)
+    .c00, .c00 a:link { color: @text; }
+    .c5a, .c5a a:link { color: @subtext0; }
+    .c73, .c73 a:link { color: @subtext0; }
+    .c82, .c82 a:link { color: @subtext1; }
+    .c88, .c88 a:link { color: @subtext1; }
+    .c9c, .c9c a:link { color: @subtext1; }
+    .cae, .cae a:link { color: @subtext2; }
+    .cbe, .cbe a:link { color: @subtext2; }
+    .cce, .cce a:link { color: @subtext2; }
+    .cdd, .cdd a:link { color: @subtext2; }
+
+    // --- Default text ---
+    .default {
+        color: @text;
+    }
+
+    // --- Admin text ---
+    .admin {
+        color: @bright_text;
+    }
+
+    .admin a:link {
+        color: @accent;
+    }
+
+    // --- Forms (login, submit, etc.) ---
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[name="q"] {
+        background-color: @surface0;
+        color: @text;
+        border: 1px solid @surface1;
+    }
+
+    textarea:focus,
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+        border-color: @accent;
+    }
+
+    input[type="submit"] {
+        background-color: @surface1;
+        color: @text;
+        border: 1px solid @subtext2;
+        padding: 2px 8px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: @surface0;
+        border-color: @accent;
+        color: @accent;
+    }
+
+    // --- More link (pagination) ---
+    a.morelink {
+        color: @accent;
+    }
+
+    a.morelink:visited {
+        color: @purple;
+    }
+
+    // --- Footer ---
+    .yclinks {
+        color: @subtext1;
+    }
+
+    .yclinks a {
+        color: @subtext0;
+    }
+
+    .yclinks a:hover {
+        color: @accent;
+    }
+
+    // Footer separator line
+    td[bgcolor="#ff6600"] {
+        background-color: @surface1 !important;
+    }
+
+    // --- Polls ---
+    .poll a:link {
+        color: @accent;
+    }
+
+    .poll a:visited {
+        color: @purple;
+    }
+
+    // --- Misc ---
+    a:link {
+        color: @accent;
+    }
+
+    a:visited {
+        color: @purple;
+    }
+
+    .cdd a:visited {
+        color: @subtext2;
+    }
+
+    // Spacer rows
+    tr.spacer {
+        background-color: @base;
+    }
+}

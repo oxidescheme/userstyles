@@ -1,0 +1,424 @@
+/* ==UserStyle==
+@name Wikipedia Oxide
+@namespace github.com/oxidescheme/userstyles/styles/wikipedia
+@homepageURL https://github.com/oxidescheme/userstyles/tree/main/styles/wikipedia
+@version 2025.05.10
+@updateURL https://github.com/oxidescheme/userstyles/raw/main/styles/wikipedia/oxide.user.less
+@supportURL https://github.com/oxidescheme/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Awikipedia
+@description Oxide dark theme for Wikipedia
+@author Oxide
+@license MIT
+@preprocessor less
+==/UserStyle== */
+
+@import "https://raw.githubusercontent.com/oxidescheme/userstyles/main/lib/lib.less";
+
+@-moz-document domain("wikipedia.org"), domain("wikimedia.org") {
+    #lib.palette();
+    #lib.defaults();
+
+    // --- Override Codex design tokens (the primary theming mechanism) ---
+    // Force dark regardless of user preference
+    html,
+    html.skin-theme-clientpref-day,
+    html.skin-theme-clientpref-night,
+    html.skin-theme-clientpref-os {
+        // Text colors
+        --color-base: @text;
+        --color-base-fixed: @text;
+        --color-base--hover: @bright_text;
+        --color-emphasized: @bright_text;
+        --color-neutral: @subtext0;
+        --color-subtle: @subtext1;
+        --color-inverted: @base;
+        --color-inverted-fixed: @base;
+
+        // Links
+        --color-progressive: @accent;
+        --color-progressive--hover: @bright_teal;
+        --color-progressive--active: @teal;
+        --color-visited: @purple;
+        --color-destructive: @red;
+        --color-error: @red;
+        --color-warning: @yellow;
+        --color-success: @green;
+
+        // Backgrounds
+        --background-color-base: @base;
+        --background-color-base-fixed: @base;
+        --background-color-neutral: @surface0;
+        --background-color-neutral-subtle: @mantle;
+        --background-color-interactive: @surface0;
+        --background-color-interactive--hover: @surface1;
+        --background-color-interactive-subtle: @mantle;
+        --background-color-interactive-subtle--hover: @surface0;
+        --background-color-inverted: @bright_text;
+
+        // Borders
+        --border-color-base: @subtext2;
+        --border-color-subtle: @surface1;
+        --border-color-muted: @surface0;
+        --border-color-emphasized: @text;
+        --border-color-inverted: @base;
+        --border-color-inverted-fixed: @base;
+
+        // Semantic backgrounds
+        --background-color-warning-subtle: fade(@yellow, 10%);
+        --background-color-error-subtle: fade(@red, 10%);
+        --background-color-success-subtle: fade(@green, 10%);
+        --background-color-notice-subtle: @surface0;
+        --background-color-progressive-subtle: fade(@accent, 10%);
+    }
+
+    // --- Page background ---
+    body {
+        background-color: @mantle;
+        color: @text;
+    }
+
+    // --- Main content container ---
+    .mw-page-container {
+        background-color: @base;
+    }
+
+    // --- Header ---
+    .vector-header-container .mw-header {
+        background-color: @base;
+    }
+
+    // --- Article title ---
+    #firstHeading,
+    .firstHeading {
+        color: @bright_text;
+    }
+
+    // --- Section headings ---
+    .mw-heading,
+    .mw-heading h1,
+    .mw-heading h2,
+    .mw-heading h3,
+    .mw-heading h4,
+    .mw-heading h5,
+    .mw-heading h6 {
+        color: @bright_text;
+    }
+
+    .mw-body-content h2,
+    .mw-heading2 {
+        border-bottom-color: @surface1;
+    }
+
+    // --- Links ---
+    a {
+        color: @accent;
+    }
+
+    a:visited {
+        color: @purple;
+    }
+
+    a:hover {
+        color: @bright_text;
+    }
+
+    a.new {
+        color: @red;
+    }
+
+    a.new:visited {
+        color: @red;
+    }
+
+    // --- Tabs ---
+    .vector-menu-tabs .mw-list-item a {
+        color: @subtext0;
+    }
+
+    .vector-menu-tabs .mw-list-item a:visited {
+        color: @subtext1;
+    }
+
+    .vector-menu-tabs .mw-list-item.selected a {
+        color: @text;
+        border-bottom-color: @accent;
+    }
+
+    .vector-menu-tabs .mw-list-item a:hover {
+        color: @text;
+    }
+
+    // --- Left sidebar ---
+    #mw-panel .vector-menu-content a {
+        color: @subtext0;
+    }
+
+    #mw-panel .vector-menu-content a:visited {
+        color: @subtext1;
+    }
+
+    #mw-panel .vector-menu-content a:hover {
+        color: @accent;
+    }
+
+    .vector-menu-heading {
+        color: @text;
+    }
+
+    // --- Table of Contents ---
+    .vector-toc .vector-toc-link {
+        color: @subtext0;
+    }
+
+    .vector-toc .vector-toc-link:hover {
+        color: @accent;
+    }
+
+    .vector-toc .vector-toc-list-item-active > .vector-toc-link {
+        color: @text;
+    }
+
+    .vector-toc .vector-toc-numb {
+        color: @subtext1;
+    }
+
+    // --- Infoboxes ---
+    .infobox {
+        background-color: @mantle !important;
+        border-color: @surface0 !important;
+        color: @text;
+    }
+
+    .infobox th,
+    .infobox-header {
+        background-color: @surface0 !important;
+        color: @bright_text;
+    }
+
+    .infobox-label {
+        color: @subtext0;
+    }
+
+    .infobox-data {
+        color: @text;
+    }
+
+    // --- Wikitables ---
+    .wikitable {
+        background-color: @mantle;
+        color: @text;
+        border-color: @surface0;
+    }
+
+    .wikitable > tr > th,
+    .wikitable > * > tr > th {
+        background-color: @surface0;
+        color: @bright_text;
+        border-color: @surface1;
+    }
+
+    .wikitable > tr > td,
+    .wikitable > * > tr > td {
+        border-color: @surface0;
+    }
+
+    // --- Category links ---
+    #catlinks {
+        background-color: @mantle;
+        border-color: @surface0;
+        color: @text;
+    }
+
+    #catlinks a {
+        color: @accent;
+    }
+
+    #catlinks a:visited {
+        color: @purple;
+    }
+
+    // --- Footer ---
+    .mw-footer {
+        border-top-color: @surface0;
+        color: @subtext0;
+    }
+
+    .mw-footer li {
+        color: @subtext0;
+    }
+
+    .mw-footer a {
+        color: @subtext0;
+    }
+
+    .mw-footer a:hover {
+        color: @accent;
+    }
+
+    // --- Search box ---
+    #searchInput {
+        background-color: @surface0;
+        color: @text;
+        border-color: @surface1;
+    }
+
+    #searchInput:focus {
+        border-color: @accent;
+    }
+
+    .cdx-search-input {
+        background-color: @surface0;
+        border-color: @surface1;
+    }
+
+    .cdx-typeahead-search__search-menu__item:hover {
+        background-color: @surface1;
+    }
+
+    // --- Thumbnail/image borders ---
+    .thumbinner {
+        background-color: @mantle;
+        border-color: @surface0;
+    }
+
+    .thumbcaption {
+        color: @subtext1;
+    }
+
+    // --- Code blocks ---
+    code {
+        background-color: @surface0;
+        color: @text;
+    }
+
+    pre,
+    .mw-code {
+        background-color: @mantle;
+        color: @text;
+        border-color: @surface0;
+    }
+
+    // --- Blockquotes ---
+    blockquote {
+        border-left-color: @surface1;
+        color: @subtext0;
+    }
+
+    // --- Edit sections ---
+    .mw-editsection {
+        color: @subtext1;
+    }
+
+    .mw-editsection a {
+        color: @subtext0;
+    }
+
+    .mw-editsection a:hover {
+        color: @accent;
+    }
+
+    // --- "From Wikipedia..." subtitle ---
+    #siteSub {
+        color: @subtext1;
+    }
+
+    // --- Navboxes ---
+    .navbox {
+        background-color: @mantle;
+        border-color: @surface0;
+        color: @text;
+    }
+
+    .navbox-title {
+        background-color: @surface0;
+        color: @bright_text;
+    }
+
+    .navbox-group {
+        background-color: @surface0;
+        color: @subtext0;
+    }
+
+    .navbox-list {
+        background-color: @mantle;
+        color: @text;
+    }
+
+    .navbox a {
+        color: @accent;
+    }
+
+    .navbox a:visited {
+        color: @purple;
+    }
+
+    // --- Ambox / notice boxes ---
+    .ambox {
+        background-color: fade(@yellow, 10%);
+        border-color: @yellow;
+    }
+
+    .ambox a {
+        color: @accent;
+    }
+
+    // --- Redirect categories ---
+    .redirectMsg {
+        color: @subtext0;
+    }
+
+    // --- References ---
+    .reference a {
+        color: @subtext0;
+    }
+
+    .reference a:visited {
+        color: @subtext1;
+    }
+
+    // --- Diff view ---
+    .diff-context {
+        background-color: @base;
+        color: @text;
+    }
+
+    .diff-deletedline {
+        background-color: @amber;
+        color: @text;
+    }
+
+    .diff-addedline {
+        background-color: @jade;
+        color: @text;
+    }
+
+    .diffchange {
+        background-color: fade(@accent, 20%);
+    }
+
+    // --- Confirm edit / captcha ---
+    .mw-confirmaccount-msg {
+        color: @subtext0;
+    }
+
+    // --- User login / create account ---
+    .mw-ui-input {
+        background-color: @surface0;
+        color: @text;
+        border-color: @surface1;
+    }
+
+    .mw-ui-input:focus {
+        border-color: @accent;
+    }
+
+    .mw-ui-button {
+        background-color: @accent;
+        color: @base;
+        border-color: @accent;
+    }
+
+    .mw-ui-button:hover {
+        background-color: @bright_teal;
+        border-color: @bright_teal;
+    }
+}

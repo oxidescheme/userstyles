@@ -1,0 +1,296 @@
+/* ==UserStyle==
+@name DuckDuckGo Oxide
+@namespace github.com/oxidescheme/userstyles/styles/duckduckgo
+@homepageURL https://github.com/oxidescheme/userstyles/tree/main/styles/duckduckgo
+@version 2025.05.10
+@updateURL https://github.com/oxidescheme/userstyles/raw/main/styles/duckduckgo/oxide.user.less
+@supportURL https://github.com/oxidescheme/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Aduckduckgo
+@description Oxide dark theme for DuckDuckGo
+@author Oxide
+@license MIT
+@preprocessor less
+==/UserStyle== */
+
+@import "https://raw.githubusercontent.com/oxidescheme/userstyles/main/lib/lib.less";
+
+@-moz-document domain("duckduckgo.com"), domain("duckduckgogg42xjoc72x3j7ezi56bz3pbi5r4xy72klf2mfdnzf3jad.onion") {
+    #lib.palette();
+    #lib.defaults();
+
+    // --- CSS custom property overrides (primary theming mechanism) ---
+    :root {
+        // Theme colors (legacy SERP)
+        --theme-col-bg-page: @base;
+        --theme-col-bg-header: @base;
+        --theme-col-bg-header-transparent: fade(@base, 0);
+        --theme-col-bg-search: @surface0;
+        --theme-col-txt-search-input: @text;
+        --theme-col-txt-search-button: @subtext1;
+        --theme-col-txt-title: @accent;
+        --theme-col-txt-title-visited: @purple;
+        --theme-col-txt-snippet: @subtext0;
+        --theme-col-txt-url: @green;
+        --theme-col-txt-url-domain: @subtext0;
+        --theme-col-txt-url-path: @subtext1;
+        --theme-col-txt-card-body: @text;
+        --theme-col-txt-card-aside: @subtext1;
+        --theme-col-separator: @surface0;
+        --theme-col-header-divider: @surface0;
+        --theme-searchbox-border: @surface1;
+        --theme-col-bg-bar: @mantle;
+        --theme-col-bg-modal: @surface0;
+        --theme-shadow-card: 0 2px 3px fade(@mantle, 6%);
+        --theme-col-icon: @subtext0;
+        --theme-col-glow: fade(@accent, 20%);
+
+        // SDS colors (React components)
+        --sds-color-background-01: @base;
+        --sds-color-background-02: @surface0;
+        --sds-color-background-03: @mantle;
+        --sds-color-text-01: @text;
+        --sds-color-text-02: @subtext0;
+        --sds-color-text-03: @subtext1;
+        --sds-color-text-link-01: @accent;
+        --sds-color-border-inner-divider: fade(@bright_text, 9%);
+    }
+
+    // --- Page background ---
+    body,
+    .site-wrapper {
+        background-color: @base !important;
+        color: @text !important;
+    }
+
+    // --- Header ---
+    .header-wrap {
+        background-color: @base !important;
+    }
+
+    .header__search-wrap {
+        background-color: @base;
+    }
+
+    // --- Search bar ---
+    .search--header {
+        background-color: @surface0;
+        border-color: @surface1;
+    }
+
+    .search--header:hover,
+    .search--focus .search--header {
+        border-color: @accent;
+    }
+
+    .search__input {
+        background-color: @surface0;
+        color: @text;
+    }
+
+    .search__input::placeholder {
+        color: @subtext1;
+    }
+
+    .search__button {
+        background-color: @surface1;
+        color: @subtext0;
+        border-color: @surface1;
+    }
+
+    .search__button:hover {
+        background-color: @surface0;
+        color: @accent;
+    }
+
+    // --- Search suggestions ---
+    .search__suggestions {
+        background-color: @surface0;
+        border-color: @surface1;
+    }
+
+    .search__suggestion:hover,
+    .search__suggestion--highlighted {
+        background-color: @surface1;
+    }
+
+    // --- Main content area ---
+    .content-wrap {
+        background-color: @base;
+    }
+
+    .results--main {
+        background-color: @base;
+    }
+
+    .results--sidebar {
+        background-color: @base;
+    }
+
+    // --- Search results ---
+    .result__a {
+        color: @accent !important;
+    }
+
+    .result__a:visited {
+        color: @purple !important;
+    }
+
+    .result__a:hover {
+        color: @bright_text !important;
+    }
+
+    .result__snippet {
+        color: @subtext0 !important;
+    }
+
+    .result__url {
+        color: @subtext0 !important;
+    }
+
+    .result__url__domain {
+        color: @green !important;
+    }
+
+    .result__url__full {
+        color: @subtext1 !important;
+    }
+
+    .result__date {
+        color: @subtext1 !important;
+    }
+
+    .result__extras {
+        color: @subtext1;
+    }
+
+    .result {
+        background-color: @base;
+    }
+
+    .result:hover {
+        background-color: @mantle;
+    }
+
+    // Ad results
+    .result--ad .result__a {
+        color: @orange !important;
+    }
+
+    // Result separator
+    .result--sep--hr {
+        border-color: @surface0;
+    }
+
+    // --- Sidebar / instant answers ---
+    .zci-wrap {
+        background-color: @surface0;
+        border-color: @surface1;
+        color: @text;
+    }
+
+    .zci__heading {
+        color: @text;
+    }
+
+    .zci__body {
+        color: @subtext0;
+    }
+
+    // --- Metabar (tabs) ---
+    .metabar {
+        background-color: @base;
+        border-color: @surface0;
+    }
+
+    .metabar__dropdowns {
+        color: @subtext0;
+    }
+
+    .metabar__dropdowns a {
+        color: @subtext0;
+    }
+
+    .metabar__dropdowns a:hover {
+        color: @accent;
+    }
+
+    // --- Footer ---
+    .footer {
+        background-color: @mantle;
+        border-color: @surface0;
+        color: @subtext1;
+    }
+
+    .footer a {
+        color: @subtext0;
+    }
+
+    .footer a:hover {
+        color: @accent;
+    }
+
+    // --- DDG logo (recolored) ---
+    .header__logo-wrap svg {
+        filter: brightness(0.9);
+    }
+
+    // --- Links globally ---
+    a {
+        color: @accent;
+    }
+
+    a:visited {
+        color: @purple;
+    }
+
+    a:hover {
+        color: @bright_text;
+    }
+
+    // --- Zero-click info ---
+    #zero_click_wrapper {
+        background-color: @surface0;
+        border-color: @surface1;
+        color: @text;
+    }
+
+    .zci--type--definitions .zci__content {
+        color: @subtext0;
+    }
+
+    // --- Buttons ---
+    .btn {
+        background-color: @surface0;
+        color: @text;
+        border-color: @surface1;
+    }
+
+    .btn:hover {
+        background-color: @surface1;
+        border-color: @accent;
+        color: @accent;
+    }
+
+    .btn--primary {
+        background-color: @accent;
+        color: @base;
+    }
+
+    .btn--primary:hover {
+        background-color: @bright_teal;
+    }
+
+    // --- Dropdown menus ---
+    .dropdown {
+        background-color: @surface0;
+        border-color: @surface1;
+    }
+
+    .dropdown__link {
+        color: @text;
+    }
+
+    .dropdown__link:hover {
+        background-color: @surface1;
+        color: @accent;
+    }
+}
