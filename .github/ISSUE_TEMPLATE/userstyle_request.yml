@@ -1,0 +1,33 @@
+name: New Userstyle Request
+description: Request an Oxide theme for a specific website
+title: "[Website Request]: <Website Name>"
+labels: ["enhancement", "help wanted", "good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for requesting a new userstyle! Oxide is a community-driven ecosystem. If you know some CSS, you can create it yourself and submit a PR! 
+        Otherwise, leave the request here.
+  - type: input
+    id: website_name
+    attributes:
+      label: Website Name
+      description: Which website do you want a dark theme for?
+      placeholder: e.g. Hacker News, Reddit, StackOverflow
+    validations:
+      required: true
+  - type: input
+    id: website_url
+    attributes:
+      label: Website URL
+      description: The main URL of the website
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: Are there any specific parts of the website that need special attention?
+    validations:
+      required: false
