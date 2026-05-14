@@ -95,8 +95,8 @@ async function lint(): Promise<number> {
 
     if (hardcodedHexColors) {
       const oxideHexValues = new Set([
-        "#121212", "#161616", "#222222", "#262626",
-        "#dedede", "#cecece", "#bebebe", "#8f8f8f", "#555555",
+        "#121212", "#161616", "#222222", "#222222",
+        "#eeeeee", "#cecece", "#aeaeae", "#808080", "#555555",
         "#ed756e", "#e48233", "#c39900", "#5bb661", "#00baaa", "#00b3d6", "#3ba6f5", "#968ff7", "#cc7bd1",
         "#ff9890", "#ffa156", "#e3b831", "#7bd77f", "#00dcca", "#00d5f9", "#6fc6ff", "#b5b2ff", "#dd8be2",
         "#452b28", "#263826", "#213546",
