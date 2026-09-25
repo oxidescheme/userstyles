@@ -9,9 +9,9 @@ A minimalist colorscheme for the web.
 </h6>
 
 <p align="center">
-  <a href="https://github.com/oxidescheme/userstyles/stargazers"><img src="https://img.shields.io/github/stars/oxidescheme/userstyles?colorA=161616&colorB=00a6ff&style=for-the-badge"></a>
-  <a href="https://github.com/oxidescheme/userstyles/issues"><img src="https://img.shields.io/github/issues/oxidescheme/userstyles?colorA=161616&colorB=ff5655&style=for-the-badge"></a>
-  <a href="https://discord.gg/p8GcbBH5MR"><img src="https://img.shields.io/discord/1450777325267456097?style=for-the-badge&color=00baaa&labelColor=161616&logo=discord&logoColor=white"></a>
+  <a href="https://github.com/oxidescheme/userstyles/stargazers"><img src="https://img.shields.io/github/stars/oxidescheme/userstyles?colorA=161616&colorB=2e2e2e&style=for-the-badge"></a>
+  <a href="https://github.com/oxidescheme/userstyles/issues"><img src="https://img.shields.io/github/issues/oxidescheme/userstyles?colorA=161616&colorB=2e2e2e&style=for-the-badge"></a>
+  <a href="https://discord.gg/p8GcbBH5MR"><img src="https://img.shields.io/discord/1450777325267456097?style=for-the-badge&color=2e2e2e&labelColor=161616&logo=discord&logoColor=cecece"></a>
 </p>
 
 Oxide userstyles bring the oxide dark theme to your favorite websites and web applications.
